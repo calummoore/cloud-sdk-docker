@@ -7,7 +7,7 @@ RUN google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash
 RUN google-cloud-sdk/bin/gcloud --quiet components update pkg-go pkg-python pkg-java preview alpha beta app
 RUN google-cloud-sdk/bin/gcloud --quiet config set component_manager/disable_update_check true
 
-RUN gcloud components update -qq
+RUN google-cloud-sdk/bin/gcloud components update -qq
 RUN wget https://get.docker.com/builds/Linux/x86_64/docker-1.6.2 -O /usr/bin/docker \
     && chmod +x /usr/bin/docker
 
